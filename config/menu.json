@@ -1,0 +1,61 @@
+{
+  "main": [
+    {
+      "name": "Beranda",
+      "url": "/"
+    },
+    {
+      "name": "Tentang",
+      "url": "/about"
+    },
+    {
+      "name": "Layanan",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Detektif Swasta",
+          "url": "/layanan/post-1"
+        },
+        {
+          "name": "Detektif Perselingkuhan",
+          "url": "/layanan/detektif-perselingkuhan"
+        },
+        {
+          "name": "Pencarian Orang Hilang",
+          "url": "/layanan/pencarian-orang-hilang"
+        },
+        {
+          "name": "Cek Latar Belakang",
+          "url": "/layanan/cek-latar-belakang"
+        },
+        {
+          "name": "Penyelidikan Partner Bisnis",
+          "url": "/layanan/penyelidikan-partner-bisnis"
+        },
+        {
+          "name": "Pengawasan Keluarga",
+          "url": "/layanan/pengawasan-keluarga"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Terms & Conditions",
+      "url": "/terms-policy"
+    }
+  ]
+}
