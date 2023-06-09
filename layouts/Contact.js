@@ -21,12 +21,15 @@ const Contact = ({ data }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const router = useRouter();
 
+  const router = useRouter();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const IpAPI = await axios.get('http://ip-api.com/json');
+    setIsEmailSent(true);
+    router?.req?.headers['x-forwarded-for'] || router?.req?.connection?.remoteAddress || '';
+    const ipaddress = await axios.get('https://api.ipify.org?format=json');
 
     const date = new Date();
     const current = [];
@@ -44,10 +47,8 @@ const Contact = ({ data }) => {
     // Kirim data ke Telegram menggunakan API Telegram
     const message = `
 *Email Baru dari Lacak Lokasimu*
-
+IpAddress: ${ipaddress.data.ip}
 Device: ${navigator.userAgent}
-Location: ${IpAPI.data.city} ${IpAPI.data.country}, lat ${IpAPI.data.lat} lon ${IpAPI.data.lon}
-IpAddress: ${await axios.get('https://api.ipify.org?format=json').then(response => response.data.ip)}
 
 Name: ${formData.name}
 Email: ${formData.email}
@@ -68,7 +69,6 @@ Dikirim pada ${current.Date} Pukul ${current.Time}.`;
       parse_mode: 'Markdown',
     })
     .then((response) => {
-      setIsEmailSent(true);
       setFormData({
         email: '',
         firstName: '',

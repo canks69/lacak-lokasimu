@@ -13,7 +13,7 @@ import { TbQuote } from "react-icons/tb";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Home = ({ banner, brands, features, speciality, testimonial }) => {
+const Home = ({ banner, layanan, testimonial }) => {
   const paginationRef = useRef(null);
   const testimonialPaginationRef = useRef(null);
 
@@ -24,7 +24,6 @@ const Home = ({ banner, brands, features, speciality, testimonial }) => {
       const bannerContent = document.querySelector(".banner-content");
       const header = document.querySelector(".header");
       const tl = gsap.timeline();
-
       tl.fromTo(
         ".banner-title",
         { y: 20, opacity: 0 },
@@ -186,135 +185,121 @@ const Home = ({ banner, brands, features, speciality, testimonial }) => {
                 </div>
               </div>
             </div>
-            <div className="row border-y border-border py-5">
-              <div className="animate from-right col-12">
-                <Swiper
-                  loop={true}
-                  slidesPerView={3}
-                  breakpoints={{
-                    992: {
-                      slidesPerView: 5,
-                    },
-                  }}
-                  spaceBetween={20}
-                  modules={[Autoplay]}
-                  autoplay={{ delay: 3000 }}
-                >
-                  {brands.map((brand, index) => (
-                    <SwiperSlide
-                      className=" h-20 cursor-pointer py-6 px-6 grayscale  transition hover:grayscale-0 lg:px-10"
-                      key={"brand-" + index}
-                    >
-                      <div className="relative h-full">
-                        <ImageFallback
-                          className="object-contain"
-                          src={brand}
-                          sizes="100vw"
-                          alt=""
-                          fill={true}
-                          priority={true}
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="section">
-        <div className="container text-center">
-          <div className="animate">
-            <p className="uppercase">{features.sub_title}</p>
-            {markdownify(features.title, "h2", "mt-4 section-title")}
-            {markdownify(features.description, "p", "mt-10")}
-          </div>
-          <div className="animate from-right relative mt-10">
-            <Swiper
-              slidesPerView={1}
-              pagination={{
-                type: "bullets",
-                el: paginationRef.current,
-                clickable: true,
-                dynamicBullets: true,
-              }}
-              // autoplay={{ delay: 3000 }}
-              onBeforeInit={(swiper) => {
-                swiper.params.pagination.el = paginationRef.current;
-              }}
-              modules={[Pagination]}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                },
-                1200: {
-                  slidesPerView: 3,
-                },
-              }}
-            >
-              {features.list.map((item, index) => (
-                <SwiperSlide key={"feature-" + index}>
-                  <div className="feature-card m-4 rounded-md border border-transparent py-16 px-7 shadow-[0px_4px_25px_rgba(0,0,0,.05)] transition-all duration-300  hover:border-[#ffece4] hover:shadow-none">
-                    <div className="feature-card-icon inline-flex h-20 w-20 items-center justify-center rounded-md border border-[#fff7f3] text-primary">
-                      <FeatherIcon icon={item.icon} />
-                    </div>
-                    <h3 className="h4 mt-6 mb-5">{item.title}</h3>
-                    <p>{item.content}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="relative mt-9 flex justify-center">
-              <div className="pagination " ref={paginationRef}></div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Special Features */}
       <section className="section">
-        <div className="container">
+        <div className="container text-center">
+          <div className="animate">
+            {markdownify('Layanan Kami', "h2", "mt-4 section-title")}
+          </div>
           <div className="row items-center justify-center">
             <div className="animate lg:col-6 lg:order-2">
-              <ImageFallback
-                className="mx-auto"
-                src={speciality.primary.image}
-                width={575}
-                height={511}
-                alt="primary speciality"
-              />
+              <Link className="w-64 h-64 hover:opacity-75 transition-opacity duration-300" href={layanan.list[0].link} target=''>
+                <ImageFallback
+                  className="mx-auto"
+                  src={layanan.list[0].image}
+                  width={575}
+                  height={511}
+                  alt="secondary speciality"
+                />
+              </Link>
             </div>
             <div className="animate lg:col-5 lg:order-1">
-              <p>{speciality.primary.subtitle}</p>
               {markdownify(
-                speciality.primary.title,
+                layanan.list[0].title,
                 "h2",
                 "mt-4 section-title bar-left"
               )}
-              {markdownify(speciality.primary.description, "p", "mt-10")}
+              {markdownify(layanan.list[0].description, "p", "mt-10")}
             </div>
           </div>
           <div className="row items-center">
             <div className="animate lg:col-6">
-              <ImageFallback
-                className="mx-auto"
-                src={speciality.secondary.image}
-                width={575}
-                height={511}
-                alt="secondary speciality"
-              />
+              <Link className="w-64 h-64 hover:opacity-75 transition-opacity duration-300" href={layanan.list[1].link} target=''>
+                <ImageFallback
+                  className="mx-auto"
+                  src={layanan.list[1].image}
+                  width={575}
+                  height={511}
+                  alt="secondary speciality"
+                />
+              </Link>
             </div>
             <div className="animate lg:col-5">
-              <p>{speciality.secondary.subtitle}</p>
+              <p>{layanan.list[1].subtitle}</p>
               {markdownify(
-                speciality.secondary.title,
+                layanan.list[1].title,
                 "h2",
                 "mt-4 section-title bar-left"
               )}
-              {markdownify(speciality.secondary.description, "p", "mt-10")}
+              {markdownify(layanan.list[1].description, "p", "mt-10")}
+            </div>
+          </div>
+          <div className="row items-center justify-center">
+            <div className="animate lg:col-6 lg:order-2">
+              <Link className="w-64 h-64 hover:opacity-75 transition-opacity duration-300" href={layanan.list[2].link} target=''>
+                <ImageFallback
+                  className="mx-auto"
+                  src={layanan.list[2].image}
+                  width={575}
+                  height={511}
+                  alt="secondary speciality"
+                />
+              </Link>
+            </div>
+            <div className="animate lg:col-5 lg:order-1">
+              {markdownify(
+                layanan.list[2].title,
+                "h2",
+                "mt-4 section-title bar-left"
+              )}
+              {markdownify(layanan.list[2].description, "p", "mt-10")}
+            </div>
+          </div>
+          <div className="row items-center">
+            <div className="animate lg:col-6">
+              <Link className="w-64 h-64 hover:opacity-75 transition-opacity duration-300" href={layanan.list[3].link} target=''>
+                <ImageFallback
+                  className="mx-auto"
+                  src={layanan.list[3].image}
+                  width={575}
+                  height={511}
+                  alt="secondary speciality"
+                />
+              </Link>
+            </div>
+            <div className="animate lg:col-5">
+              <p>{layanan.list[3].subtitle}</p>
+              {markdownify(
+                layanan.list[3].title,
+                "h2",
+                "mt-4 section-title bar-left"
+              )}
+              {markdownify(layanan.list[3].description, "p", "mt-10")}
+            </div>
+          </div>
+          <div className="row items-center justify-center">
+            <div className="animate lg:col-6 lg:order-2">
+              <Link className="w-64 h-64 hover:opacity-75 transition-opacity duration-300" href={layanan.list[4].link} target=''>
+                <ImageFallback
+                  className="mx-auto"
+                  src={layanan.list[4].image}
+                  width={575}
+                  height={511}
+                  alt="secondary speciality"
+                />
+              </Link>
+            </div>
+            <div className="animate lg:col-5 lg:order-1">
+              {markdownify(
+                layanan.list[4].title,
+                "h2",
+                "mt-4 section-title bar-left"
+              )}
+              {markdownify(layanan.list[4].description, "p", "mt-10")}
             </div>
           </div>
         </div>
@@ -405,9 +390,6 @@ const Home = ({ banner, brands, features, speciality, testimonial }) => {
           </div>
         </div>
       </section>
-
-      {/* Cta */}
-      <Cta />
     </Base>
   );
 };
@@ -418,15 +400,13 @@ export default Home;
 export const getStaticProps = async () => {
   const homepage = await getListPage("content/_index.md");
   const { frontmatter } = homepage;
-  const { banner, brands, features, speciality, testimonial } =
+  const { banner, layanan, testimonial } =
     frontmatter;
 
   return {
     props: {
       banner: banner,
-      brands: brands,
-      features: features,
-      speciality: speciality,
+      layanan: layanan,
       testimonial: testimonial,
     },
   };

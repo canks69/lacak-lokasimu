@@ -6,57 +6,29 @@ banner:
     label: Hubungi Kami
     href: "https://wa.me/6281249939704"
 
-##brands
-brands:
-  - /images/brands/01-colored.png
-  - /images/brands/02-colored.png
-  - /images/brands/03-colored.png
-  - /images/brands/04-colored.png
-  - /images/brands/05-colored.png
-  - /images/brands/06-colored.png
-  - /images/brands/04-colored.png
-  - /images/brands/05-colored.png
-  - /images/brands/06-colored.png
-
-#features
-features:
-  sub_title: 
-  title: Layanan Kami
-  description: Lacak Lokasi menyediakan berbagai layanan profesional dalam bidang pelacakan lokasi. </br> Kami menawarkan solusi detektif swasta dan jasa investigasi yang handal untuk memenuhi kebutuhan klien kami.
+#Layanan
+layanan:
   list:
-    - icon: 'map-pin' # feather icon: https://feathericons.com/
-      title: Jasa Detektif Swasta
-      content: 
-      link: "#"
-    - icon: 'wind'
-      title: Detektif Perselingkuhan
-      content: 
-      link: "#"
-    - icon: 'shield'
-      title: Pencarian Orang Hilang
-      content: 
-      link: "#"
-    - icon: 'link'
-      title: Cek Latar Belakang
-      content: 
-      link: "#"
-    - icon: 'lock'
-      title: Pengawasan Anggota Keluarga
-      content: 
-      link: "#"
-
-#speciality
-speciality:
-  primary:
-    title: You Will Not Miss Your All Misunderstandings
-    subtitle: PRIMARY SPECIALITY
-    description: Protect your design vision and leave nothing up to interpretation with interaction recipes. Quickly share and access all your team members interactions by using libraries, ensuring consistency throughout the.
-    image: /images/features-01.png
-  secondary:
-    title: Say Hello To No-Code The Advance Creation
-    subtitle: SECONDARY SPECIALITY
-    description: From the simplest of interactions to those that use Excel-gradeing formulas, ProtoPie can handle them all. Make mind-blowing of New interactions everyday without ever having to write any new code.
-    image: /images/features-02.png
+    - title: Detektif Swasta
+      link: layanan/post-1
+      description: Detektif swasta adalah seorang profesional yang disewa oleh individu, perusahaan, atau lembaga untuk menyelidiki masalah hukum atau pribadi. Mereka bekerja di luar lingkup kepolisian dan biasanya memiliki keahlian khusus dalam penyelidikan, pengumpulan bukti, dan pemecahan kasus yang kompleks.
+      image: /images/layanan/image-sample-yellow.jpg
+    - title: Detektif Perselingkuhan
+      link: layanan/post-1
+      description: Detektif perselingkuhan adalah seorang profesional yang disewa untuk menyelidiki dugaan perselingkuhan dalam hubungan pasangan. Tugas mereka meliputi pengumpulan bukti, mengamati perilaku, dan memberikan laporan kepada klien mereka mengenai kegiatan yang mencurigakan.
+      image: /images/layanan/image-sample-yellow.jpg
+    - title: Pencarian Orang Hilang
+      link: layanan/post-1
+      description: Pencarian orang hilang adalah kegiatan penyelidikan yang dilakukan oleh detektif swasta atau lembaga penegak hukum untuk menemukan individu yang hilang atau tidak diketahui keberadaannya. Tujuan dari pencarian ini adalah untuk mengembalikan orang yang hilang kepada keluarga mereka atau memberikan kepastian tentang nasib mereka.
+      image: /images/layanan/image-sample-yellow.jpg
+    - title: Cek Latar Belakang
+      link: layanan/post-1
+      description: Cek latar belakang adalah proses verifikasi dan pengecekan informasi mengenai riwayat dan catatan seseorang, termasuk pendidikan, pengalaman kerja, catatan kriminal, dan catatan kredit. Hal ini dilakukan untuk tujuan keamanan atau penilaian karakter dalam konteks profesional atau pribadi.
+      image: /images/layanan/image-sample-yellow.jpg
+    - title: Pengawasan Anggota Keluarga
+      link: layanan/post-1
+      description: Pengawasan anggota keluarga adalah praktik memantau aktivitas dan perilaku anggota keluarga dengan tujuan menjaga keamanan, mengawasi anak-anak, atau memastikan ketaatan terhadap aturan rumah tangga.
+      image: /images/layanan/image-sample-yellow.jpg
 
 
 #Testimonial

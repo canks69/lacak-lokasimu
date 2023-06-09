@@ -322,7 +322,6 @@ const About = ({ data }) => {
           </div>
         </div>
       </section>
-      <Cta />
     </>
   );
 };
