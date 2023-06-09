@@ -6,7 +6,7 @@ import { sortByDate } from "@lib/utils/sortFunctions";
 const { blog_folder } = config.settings;
 
 // post single layout
-const Article = ({ post, authors, mdxContent, slug, recentPosts }) => {
+const Article = ({ post, mdxContent, slug, recentPosts }) => {
   const { frontmatter, content } = post[0];
 
   return (
@@ -14,7 +14,6 @@ const Article = ({ post, authors, mdxContent, slug, recentPosts }) => {
       frontmatter={frontmatter}
       content={content}
       mdxContent={mdxContent}
-      authors={authors}
       slug={slug}
       recentPosts={recentPosts}
     />

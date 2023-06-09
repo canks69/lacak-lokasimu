@@ -1,25 +1,23 @@
-# Menggunakan base image dari Node.js
-FROM node:14-alpine
+# Use official Node.js runtime as a parent image
+FROM node:16-alpine
 
-# Set working directory
+# Set the working directory in the container to /app
 WORKDIR /app
 
-# Menyalin package.json dan package-lock.json untuk menginstal dependensi
-COPY package.json .
-COPY package-lock.json .
+# Copy the package.json and package-lock.json files to the container
+COPY package*.json ./
 
-# Menginstal dependensi
-RUN npm ci --silent
+# Install the dependencies
+RUN npm install
 
-# Menyalin sumber kode aplikasi
+# Copy the rest of the application files to the container
 COPY . .
 
-# Mengubah mode ke production
-ENV NODE_ENV=production
-
-# Membangun aplikasi Next.js
+# Build the application for production
 RUN npm run build
 
-# Menjalankan aplikasi Next.js di port 3000
+# Expose the port that the application listens on
 EXPOSE 3000
-CMD ["npm", "start"]
+
+# Start the application
+CMD ["npm", "run", "start"]

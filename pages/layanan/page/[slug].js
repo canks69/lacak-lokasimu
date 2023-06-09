@@ -2,7 +2,6 @@ import Pagination from "@components/Pagination";
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import Banner from "@layouts/components/Banner";
-import Cta from "@layouts/components/Cta";
 import { getListPage, getSinglePage } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import Post from "@partials/Post";
@@ -13,7 +12,6 @@ const { blog_folder } = config.settings;
 const BlogPagination = ({
   postIndex,
   posts,
-  authors,
   currentPage,
   pagination,
 }) => {
@@ -47,7 +45,7 @@ const BlogPagination = ({
           >
             {currentPosts.map((post, i) => (
               <div key={`key-${i}`} className="mb-8 lg:col-5">
-                <Post post={post} authors={authors} />
+                <Post post={post} />
               </div>
             ))}
           </div>
@@ -58,8 +56,6 @@ const BlogPagination = ({
           />
         </div>
       </section>
-      {/* CTA */}
-      <Cta />
     </Base>
   );
 };

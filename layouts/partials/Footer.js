@@ -42,14 +42,18 @@ const Footer = () => {
             </ul>
           </div>
           <div className="animate mt-8 md:col-6 lg:col-3 lg:mt-0">
-            <h3 className="h5">Location & Contact</h3>
+            <h3 className="h5">Layanan Kami</h3>
             <ul className="mt-5 leading-10">
-              <li>{markdownify(location)}</li>
-              {phone && (
-                <li>
-                  <Link href={`tel:${phone}`}>{phone}</Link>
+              {menu.layanan.map((menu) => (
+                <li key={menu.name}>
+                  <Link
+                    href={menu.url}
+                    className=" hover:text-primary hover:underline"
+                  >
+                    {menu.name}
+                  </Link>
                 </li>
-              )}
+              ))}
             </ul>
           </div>
         </div>

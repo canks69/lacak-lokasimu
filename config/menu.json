@@ -15,7 +15,7 @@
       "children": [
         {
           "name": "Detektif Swasta",
-          "url": "/layanan/post-1"
+          "url": "/layanan/detektif-swasta"
         },
         {
           "name": "Detektif Perselingkuhan",
@@ -46,16 +46,42 @@
   ],
   "footer": [
     {
-      "name": "About",
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Tentang",
       "url": "/about"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "layanan": [
+    {
+      "name": "Detektif Swasta",
+      "url": "/layanan/detektif-swasta"
     },
     {
-      "name": "Terms & Conditions",
-      "url": "/terms-policy"
+      "name": "Detektif Perselingkuhan",
+      "url": "/layanan/detektif-perselingkuhan"
+    },
+    {
+      "name": "Pencarian Orang Hilang",
+      "url": "/layanan/pencarian-orang-hilang"
+    },
+    {
+      "name": "Cek Latar Belakang",
+      "url": "/layanan/cek-latar-belakang"
+    },
+    {
+      "name": "Penyelidikan Partner Bisnis",
+      "url": "/layanan/penyelidikan-partner-bisnis"
+    },
+    {
+      "name": "Pengawasan Keluarga",
+      "url": "/layanan/pengawasan-keluarga"
     }
   ]
 }
